@@ -135,10 +135,10 @@ CREATE TABLE adressen (
     huisnummer numeric,
     ingangsdatum date,
     einddatum date,
-    telefoon numeric(10),
+    telefoon INTEGER,
     med_mnr numeric NOT NULL REFERENCES medewerkers (mnr),
-    CONSTRAINT adres_key PRIMARY KEY (postcode, huisnummer, ingangsdatum)
-    CONSTRAINT check_einddatum_na_ingangsdatum CHECK (einddatum > ingangsdatum)
+    CONSTRAINT adres_key PRIMARY KEY (postcode, huisnummer, ingangsdatum),
+    CONSTRAINT check_einddatum_na_ingangsdatum CHECK (einddatum > ingangsdatum),
     CONSTRAINT telefoon_uniek UNIQUE (telefoon)
 );
 
