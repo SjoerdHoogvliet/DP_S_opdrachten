@@ -47,10 +47,10 @@ ORDER BY functie, gbdatum DESC;
 -- Welke cursussen zijn in Utrecht en/of in Maastricht uitgevoerd? Geef
 -- code en begindatum.
 DROP VIEW IF EXISTS s2_3; CREATE OR REPLACE VIEW s2_3 AS                                                     -- [TEST]
-SELECT cursussen.code, uitvoeringen.begindatum
-FROM cursussen
-LEFT JOIN uitvoeringen ON cursussen.code = uitvoeringen.cursus
-WHERE uitvoeringen.locatie = 'UTRECHT' OR uitvoeringen.locatie = 'MAASTRICHT';
+SELECT cursus, begindatum
+FROM uitvoeringen
+WHERE locatie = 'UTRECHT' OR locatie = 'MAASTRICHT'
+
 
 -- S2.4. Namen
 --
